@@ -21,7 +21,6 @@ int main(){
 	printf("現在のバージョンを入力してください...\n");
 	scanf("%s",&version);
 	sprintf(newfilepath, "res_mods\\%s\\engine_config.xml", version);
-	printf("%s", newfilepath);
 
 	if(!(CopyFile("res\\engine_config.xml",newfilepath,FALSE))){
 		fprintf(stderr,"ERROR: copy failed.\n");

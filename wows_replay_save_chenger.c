@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
 #include<windows.h>
 
 int main(){
@@ -21,9 +20,8 @@ int main(){
 	
 	printf("現在のバージョンを入力してください...\n");
 	scanf("%s",&version);
-	strcpy(newfilepath,"res_mods\\");
-	strcat(newfilepath,version);
-	strcat(newfilepath,"\\engine_config.xml");
+	sprintf(newfilepath, "res_mods\\%s\\engine_config.xml", version);
+	printf("%s", newfilepath);
 
 	if(!(CopyFile("res\\engine_config.xml",newfilepath,FALSE))){
 		fprintf(stderr,"ERROR: copy failed.\n");
@@ -46,9 +44,7 @@ int main(){
 
 	printf("新しいリプレイの保存数を入力してください(デフォルト:30)...\n");
 	scanf("%s", &inputreplaycount);
-	strcpy(newreplaycount, "        <maxReplaysToSave>");
-	strcat(newreplaycount, inputreplaycount);
-	strcat(newreplaycount,"</maxReplaysToSave>\n");
+	sprintf(newreplaycount, "        <maxReplaysToSave>%s</maxReplaysToSave>\n", inputreplaycount);
 
 	for(i = 0;i < line; i++){
 		if(strstr(arr[i], "maxReplaysToSave") != NULL){
@@ -73,5 +69,4 @@ int main(){
 	system("pause");
 	return 0;
 }
-
 

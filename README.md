@@ -1,6 +1,6 @@
 # WoWSリプレイ保存数変更機
 
-WoWSリプレイ保存数変更機v1.0  
+WoWSリプレイ保存数変更機v1.1  
 作成:境闇 Twitter@Mierapid23  
   
 使い方  

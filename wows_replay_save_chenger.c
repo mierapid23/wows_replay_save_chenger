@@ -7,7 +7,7 @@ int main(){
 	char version[128],newfilepath[1024],arr[1024][1024],inputreplaycount[4],newreplaycount[256];
 	FILE *originalfile,*newfile;
 	//前置き
-	printf("WoWSリプレイ保存数変更機 v1.0\n");
+	printf("WoWSリプレイ保存数変更機 v1.1\n");
 	printf("作成:境闇 Twitter@Mierapid23\n\n");
 
 	//copy original file

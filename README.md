@@ -1,4 +1,4 @@
-#wows_replay_save_chenger
+# wows_replay_save_chenger
 
 WoWSリプレイ保存数変更機v1.0
 作成:境闇 Twitter@Mierapid23

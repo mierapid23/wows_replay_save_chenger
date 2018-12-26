@@ -7,7 +7,7 @@ int main(){
 	char version[128],newfilepath[1024],arr[1024][1024],inputreplaycount[4],newreplaycount[256];
 	FILE *originalfile,*newfile;
 	//前置き
-	printf("WoWSリプレイ保存数変更機 v1.0\n");
+	printf("WoWSリプレイ保存数変更機 v1.2\n");
 	printf("作成:境闇 Twitter@Mierapid23\n\n");
 
 	//copy original file
@@ -22,11 +22,15 @@ int main(){
 	scanf("%s",&version);
 	sprintf(newfilepath, "res_mods\\%s\\engine_config.xml", version);
 
+	if((newfile = fopen(newfilepath, "r")) != NULL){
+		printf("すでにengine_config.xmlが存在します。\n");
+	}else
 	if(!(CopyFile("res\\engine_config.xml",newfilepath,FALSE))){
 		fprintf(stderr,"ERROR: copy failed.\n");
 		system("pause");
 		return 1;
 	}
+	fclose(newfile);
 
 	printf("\n");
 
